@@ -13,7 +13,7 @@ import { DataService } from '../services/data.service';
 export class TableComponent implements OnInit {
 
   // vars
-  dataSource: MatTableDataSource<any>;
+  dataSource = new MatTableDataSource();
   displayedColumns = ['title', 'url', 'created_at', 'author'];
   timer = interval(10000);
 
@@ -36,7 +36,6 @@ export class TableComponent implements OnInit {
       });
   }
 
-  // filter data
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

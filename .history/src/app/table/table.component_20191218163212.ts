@@ -32,11 +32,10 @@ export class TableComponent implements OnInit {
   fetchData() {
     this.dataService.getAllData()
       .subscribe((data) => {
-        this.dataSource = new MatTableDataSource(data['hits']);
+        this.dataSource = data['hits'];
       });
   }
 
-  // filter data
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }

@@ -1,5 +1,5 @@
-<mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter Data">
+<mat-form-field style="width: 100%;">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
 <table mat-table [dataSource]="dataSource" class="data-table">
