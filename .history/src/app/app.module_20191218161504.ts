@@ -17,7 +17,6 @@ import { TableComponent } from './table/table.component';
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     MaterialModule
