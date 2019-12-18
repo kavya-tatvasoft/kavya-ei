@@ -49,11 +49,9 @@ export class TableComponent implements OnInit {
   }
 
   openDialog(row: any) {
-    
-    const rowData = JSON.stringify(row);
-
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: rowData
+      width: '250px',
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -29,5 +29,5 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr (click)="openDialog(row)" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr (click)="openDialog()" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>

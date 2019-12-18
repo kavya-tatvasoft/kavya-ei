@@ -48,12 +48,10 @@ export class TableComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(row: any) {
-    
-    const rowData = JSON.stringify(row);
-
+  openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: rowData
+      width: '250px',
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {

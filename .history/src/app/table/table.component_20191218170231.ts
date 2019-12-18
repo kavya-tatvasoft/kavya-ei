@@ -53,6 +53,7 @@ export class TableComponent implements OnInit {
     const rowData = JSON.stringify(row);
 
     const dialogRef = this.dialog.open(DialogComponent, {
+      width: '650px',
       data: rowData
     });
 

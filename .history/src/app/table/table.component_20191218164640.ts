@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { interval } from 'rxjs';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 // services
 import { DataService } from '../services/data.service';
-
-// component
-import { DialogComponent } from '../shared/component/dialog/dialog.component';
-
 
 @Component({
   selector: 'app-table',
@@ -48,12 +43,10 @@ export class TableComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  openDialog(row: any) {
-    
-    const rowData = JSON.stringify(row);
-
+  openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
-      data: rowData
+      width: '250px',
+      data: {}
     });
 
     dialogRef.afterClosed().subscribe(result => {

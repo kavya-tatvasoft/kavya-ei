@@ -1,15 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { interval } from 'rxjs';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 // services
 import { DataService } from '../services/data.service';
-
-// component
-import { DialogComponent } from '../shared/component/dialog/dialog.component';
-
 
 @Component({
   selector: 'app-table',
@@ -24,8 +19,7 @@ export class TableComponent implements OnInit {
   timer = interval(10000);
 
   constructor(
-    private dataService: DataService,
-    public dialog: MatDialog
+    private dataService: DataService
   ) { }
 
   ngOnInit() {
@@ -46,19 +40,6 @@ export class TableComponent implements OnInit {
   // filter data
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-
-  openDialog(row: any) {
-    
-    const rowData = JSON.stringify(row);
-
-    const dialogRef = this.dialog.open(DialogComponent, {
-      data: rowData
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
 }
